@@ -8,7 +8,7 @@ The purpose of this workshop is to gain hands-on experience in designing ER diag
 
 ---
 
-## 🧪 Choose One Scenario:
+## 🧪 Choose One Scenario:Hospital Database
 
 ### 🔹 Scenario 1: University Database
 Design a database to manage students, instructors, programs, courses, and student enrollments. Include prerequisites for courses.
@@ -48,25 +48,81 @@ Design a database for patient management, appointments, medical records, and bil
 # ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+Hospital (choose one)
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![Untitled](https://github.com/user-attachments/assets/fdc05bdf-328e-471f-baa9-0f3754048e39)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+```
+1.Patient
+   Patient_ID (PK)
+   Name
+   DOB
+   Address
+   Phone
+   Insurance_Provider
+   Insurance_Number 
+   
+2.Doctor
+   Doctor_ID (PK)
+   Name
+   Phone
+   Department
+   Specialization
 
+3.Appointment
+   Appointment_ID (PK)
+   Date_Time
+   Reason
+   Patient_ID (FK)
+   Doctor_ID (FK)
+
+4.Medical_Record
+   Record_ID (PK)
+   Diagnosis
+   Treatment
+   Test_Results
+   Appointment_ID (FK)
+
+5.Billing
+   Bill_ID (PK)
+   Appointment_ID (FK)
+   Amount
+   Payment_Status
+   Payment_Date
+```
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+```
+Patient — "makes" —> Appointment (One-to-Many)
 
+Doctor — "attends" —> Appointment (One-to-Many)
+
+Appointment — "has" —> Medical_Record (One-to-One)
+
+Appointment — "generates" —> Billing (One-to-One)
+
+```
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+```
+Billing has a 1:1 relationship with Appointment because:
 
+Every appointment results in a bill.
+
+A bill includes the amount, payment status (Paid/Unpaid/Pending), and payment date.
+
+This avoids redundancy and links the financial side cleanly with clinical activity.
+```
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+```
+Patient and Doctor are natural entities — real-world actors.
 
+Appointment links Patient and Doctor because an appointment is an interaction between them.
+
+Medical Record is tied to an Appointment, because diagnosis and treatment happen during an appointment.
+
+Billing is directly tied to Appointment, as each visit generates a billing entry.
+```
 ## RESULT
+Thus the the concepts of ER modeling by creating an ER diagram for a real-world application is created.
