@@ -102,127 +102,150 @@ CREATE TABLE Table_Name (
   col_name3 data_type DEFAULT 'default_value'
 );
 ```
+### Submission:
+GOWSHIK S 212223220026
 
 **Question 1**
---
--- Paste Question 1 here
+![Q1](https://github.com/user-attachments/assets/e11a7152-453e-427c-ace6-8d9f846540b2)
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Employees(
+EmployeeID PRIMARY KEY,
+FirstName NOT NULL,
+LastName NOT NULL,
+Email UNIQUE,
+Salary DECIMAL CHECK(Salary > 0),
+DepartmentID INTEGER,
+FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
 ```
 
 **Output:**
-
-![Output1](output.png)
+![A1](https://github.com/user-attachments/assets/86235bca-2ddc-4f2d-a158-2b89bad9b01d)
 
 **Question 2**
----
--- Paste Question 2 here
+![Q2](https://github.com/user-attachments/assets/3c1a3134-7b62-4044-98fe-b6d7444c4d0d)
 
 ```sql
--- Paste your SQL code below for Question 2
+ALTER TABLE Student_details
+ADD Date_of_birth Date;
 ```
 
 **Output:**
-
-![Output2](output.png)
+![A2](https://github.com/user-attachments/assets/deaa9450-4ab5-46e8-b07f-b1f423fc10b3)
 
 **Question 3**
----
--- Paste Question 3 here
+![Q3](https://github.com/user-attachments/assets/94141be7-acae-43b7-bf7f-708012bdb1f8)
 
 ```sql
--- Paste your SQL code below for Question 3
+INSERT INTO Products(ProductID, Name, Category, Price, Stock)
+VALUES (106, "Fitness Tracker", "Wearables", NULL, NULL);
+
+INSERT INTO Products(ProductID, Name, Category, Price, Stock)
+VALUES (107, "Laptop", "Electronics", 999.99, 50);
+
+INSERT INTO Products(ProductID, Name, Category, Price, Stock)
+VALUES (108, "Wireless Earbuds", "Accessories", NULL, 100);
 ```
 
 **Output:**
-
-![Output3](output.png)
+![A3](https://github.com/user-attachments/assets/11c330f1-889b-436e-a09d-c08f0e327371)
 
 **Question 4**
----
--- Paste Question 4 here
+![Q4](https://github.com/user-attachments/assets/3f078f30-ea5b-4021-8733-b6417a2cceee)
 
 ```sql
--- Paste your SQL code below for Question 4
+INSERT INTO Employee(EmployeeID, Name, Department, Salary)
+SELECT EmployeeID, Name, Department, Salary FROM Former_employees;
 ```
 
 **Output:**
-
-![Output4](output.png)
+![A4](https://github.com/user-attachments/assets/7cd124b6-20c9-42d3-bdb1-48bb41f38dce)
 
 **Question 5**
----
--- Paste Question 5 here
+![Q5](https://github.com/user-attachments/assets/4c3e15c9-f268-477b-91d8-98807f6f3427)
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE Products(
+ProductID PRIMARY KEY,
+ProductName NOT NULL,
+Price REAL CHECK(Price > 0),
+Stock INTEGER CHECK(Stock >= 0)
+);
 ```
 
 **Output:**
-
-![Output5](output.png)
+![A5](https://github.com/user-attachments/assets/8dc31525-b4ab-46a2-9f76-ed471031a158)
 
 **Question 6**
----
--- Paste Question 6 here
+![Q6](https://github.com/user-attachments/assets/cf0e68b8-14aa-4acd-b001-07721ec8e9d3)
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate INTEGER NOT NULL,
+icom_id TEXT CHECK(Length(icom_id)=4),
+FOREIGN KEY (icom_id) REFERENCES company(com_id)
+ON UPDATE SET NULL
+ON DELETE SET NULL
+);
 ```
 
 **Output:**
-
-![Output6](output.png)
+![A6](https://github.com/user-attachments/assets/ffe49c70-7513-4e9e-94cb-1f66f0279f94)
 
 **Question 7**
----
--- Paste Question 7 here
+![Q7](https://github.com/user-attachments/assets/af087f93-4625-48bf-8a4d-1ecea52c9357)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE contacts(
+contact_id INTEGER PRIMARY KEY,
+first_name TEXT NOT NULL,
+last_name TEXT NOT NULL,
+email TEXT,
+phone TEXT NOT NULL CHECK(Length(phone) >= 10)
+);
 ```
 
 **Output:**
-
-![Output7](output.png)
+![A7](https://github.com/user-attachments/assets/ccffa308-254e-49f2-8d40-e3211fcf008d)
 
 **Question 8**
----
--- Paste Question 8 here
+![Q8](https://github.com/user-attachments/assets/2179cbf1-00ab-42c1-964c-719f2d05f9a3)
 
 ```sql
--- Paste your SQL code below for Question 8
+ALTER TABLE Student_details
+ADD mobilenumber number;
 ```
 
 **Output:**
-
-![Output8](output.png)
+![A8](https://github.com/user-attachments/assets/30abeb4d-d97d-4eae-a1c4-723d644052c4)
 
 **Question 9**
----
--- Paste Question 9 here
+![Q9](https://github.com/user-attachments/assets/1ea61151-7cce-458c-b56a-30a8a7eda491)
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE Tasks(
+TaskID INTEGER,
+TaskName TEXT,
+DueDate DATE);
 ```
 
 **Output:**
-
-![Output9](output.png)
+![A9](https://github.com/user-attachments/assets/3562eb28-f660-450c-8d3d-ae824bc4b4f8)
 
 **Question 10**
----
--- Paste Question 10 here
+![Q10](https://github.com/user-attachments/assets/3175834d-4228-40f3-8286-112b2c6253e0)
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
+VALUES (201, "David Lee", "M", "Physics", 92);
 ```
 
 **Output:**
-
-![Output10](output.png)
-
+![A10](https://github.com/user-attachments/assets/0f9467f8-f6b6-4b35-971a-0407cf369ba5)
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
