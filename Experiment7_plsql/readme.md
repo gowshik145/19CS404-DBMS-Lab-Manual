@@ -40,7 +40,7 @@ END;
 **Expected Output:**  
 Greater number is: 80
 
-##Program:
+## Program:
 ```
 DECLARE
     num1 NUMBER := 80;  -- First number
